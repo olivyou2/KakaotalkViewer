@@ -1,38 +1,147 @@
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+KR:wght@100;400;500&display=swap');
+
+html {
+  background-color: #b2c7d9;
+}
+
 .App {
-  text-align: center;
-}
-
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
   display: flex;
   flex-direction: column;
+  margin-top: 10px;
+}
+
+.dateHr hr {
+  height: 1px;
+  border: none;
+  background-color: #8e9fae;
+  margin-left: 20px;
+  margin-right: 20px;
+}
+
+.dateHr .dateView {
+  position: absolute;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  width: 100%;
+  height: 30px;
+  transform: translateY(-23.5px);
+  color: #2e2e2e;
 }
 
-.App-link {
-  color: #61dafb;
+.dateHr .dateText {
+  background-color: #b2c7d9;
+  padding-left: 10px;
+  padding-right: 10px;
+  font-size: 13px;
+  font-family: 'Noto Sans KR', sans-serif;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.talk {
+  display: flex;
+  flex-direction: row;
+  justify-content: flex-end;
+  margin-right: 10px;
+  margin-bottom: 3px;
+}
+
+.talk .talkAuthor {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: #1f1f1f;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.talk .talkWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.talk .talkWrapper .talkChat {
+  font-size: 12px;
+  background-color: #ffff33;
+  padding: 5px;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans KR', sans-serif;
+  
+  max-width: 300px;
+  word-break:break-all;
+}
+
+.talk .talkWrapper .talkDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 12px;
+  margin-right: 5px;
+  cursor: default;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+.talk .talkDate::-moz-selection {
+  background: rgba(0, 0,0,0);
+}
+
+.talk .talkDate::selection {
+  background: rgba(0, 0,0,0);
+}
+
+.talkOther {
+  margin-left: 10px;
+  margin-bottom: 3px;
+}
+
+.talkOther .talkAuthor {
+  font-size: 12px;
+  margin-top: 4px;
+  margin-bottom: 4px;
+  color: #1f1f1f;
+  cursor: default;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.talkOther .talkAuthor::-moz-selection {
+  background: rgba(0, 0,0,0);
+}
+
+.talkOther .talkAuthor::selection {
+  background: rgba(0, 0,0,0);
+}
+
+.talkOther .talkWrapper {
+  display: flex;
+  flex-direction: row;
+}
+
+.talkOther .talkWrapper .talkChat {
+  font-size: 12px;
+  background-color: white;
+  padding: 5px;
+  border-radius: 2px;
+  -webkit-box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 2px 2px 8px -1px rgba(0, 0, 0, 0.1);
+  font-family: 'Noto Sans KR', sans-serif;
+  word-break:break-all;
+  
+  max-width: 300px;
+}
+
+.talkOther .talkWrapper .talkDate {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  font-size: 12px;
+  margin-left: 5px;
+  cursor: default;
+  font-family: 'Noto Sans KR', sans-serif;
+}
+
+.talkOther .talkWrapper .talkDate::-moz-selection {
+  background: rgba(0, 0,0,0);
+}
+
+.talkOther .talkWrapper .talkDate::selection {
+  background: rgba(0, 0,0,0);
 }
