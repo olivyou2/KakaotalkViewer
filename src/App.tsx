@@ -1,31 +1,11 @@
-import React, { useEffect, useState } from "react";
-import logo from "./logo.svg";
+import { useEffect, useState } from "react";
 import "./App.css";
 
-interface ChatData {
-  author?: string;
-  date: string;
-  chat?: string;
-  continuous?: boolean;
-}
-
-class Row {
-  type: string;
-  content?: ChatData;
-
-  constructor(type: string, content?: ChatData) {
-    this.type = type;
-    this.content = content;
-  }
-}
-
-interface IEvent {
-  keydown?: (this: Window, ev: KeyboardEvent) => any;
-}
-
-interface DateProps {
-  date: string;
-}
+import { Row } from "./Class/Row";
+import { IEvent } from "./Interface/IEvent";
+import { DateProps } from "./Interface/IDateProps";
+import { TalkProps } from "./Interface/ITalkProps";
+import { RowProps } from "./Interface/IRowProps";
 
 function DateRender(props: DateProps) {
   return (
@@ -36,14 +16,6 @@ function DateRender(props: DateProps) {
       </div>
     </div>
   );
-}
-
-interface TalkProps {
-  author: string;
-  date: string;
-  chat: string;
-  start: boolean;
-  end: boolean;
 }
 
 function TalkOther(props: TalkProps) {
@@ -67,13 +39,6 @@ function Talk(props: TalkProps) {
       </div>
     </div>
   );
-}
-
-interface RowProps {
-  row: Row;
-  rows: Row[];
-  rowIndex: number;
-  me: string;
 }
 
 function RenderRow(props: RowProps) {
@@ -161,7 +126,8 @@ function App() {
   const [events, setEvents] = useState({} as IEvent);
 
   useEffect(() => {
-    setMe("하재란");
+    // Todo: 화면의 우측에 배열될 본인의 이름을 설정합니다.
+    setMe("");
 
     if (events.keydown) {
       window.removeEventListener("keydown", events.keydown);
